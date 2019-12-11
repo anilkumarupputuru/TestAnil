@@ -33,7 +33,7 @@ public class Registration {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		registration = new RegisterPOM(); 
+		registration = new RegisterPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -43,11 +43,11 @@ public class Registration {
 	@AfterMethod
 	public void tearDown() throws Exception {
 		Thread.sleep(1000);
-	
 	}
 
 	@Test
 	public void registrationTest() {
+		registration.clicksignupbtn();
 		registration.sendFirstName("Anil");
 		registration.sendLastName("Kumar");
 		registration.sendEmail("anil@abc.com");

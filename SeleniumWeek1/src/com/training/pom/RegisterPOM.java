@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RegisterPOM {
 	private WebDriver driver; 
-	public RegisterPOM() {
+	public RegisterPOM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 
@@ -30,8 +30,12 @@ public class RegisterPOM {
 	
 	@FindBy(id="registration_submit")
 	private WebElement Registerbtn; 
-	
-	public void sendFirstName(String FirstName) {
+
+	public void clicksignupbtn() {
+		this.Signup.click(); 
+	}
+
+	public void sendFirstName(String StrFirstName) {
 		this.FirstName.clear();
 		this.FirstName.sendKeys("Anil");
 	}

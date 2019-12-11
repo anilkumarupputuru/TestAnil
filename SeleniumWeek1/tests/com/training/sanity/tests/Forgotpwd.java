@@ -33,7 +33,7 @@ public class Forgotpwd {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
-		ForGotPOM forGotPOM = new ForGotPOM(driver); 
+	 forgotpwd = new ForGotPOM(driver); 
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -41,10 +41,10 @@ public class Forgotpwd {
 	}
 	
 	//@AfterMethod
-	/*public void tearDown() throws Exception {
-		Thread.sleep(1000);
-		driver.quit();
-	}*/
+	public void tearDown() throws Exception {
+		Thread.sleep(5000);
+		
+	}
 	@Test
 	public void validLoginTest() {
 		forgotpwd.Lostpwdclick();
